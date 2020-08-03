@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--<link rel="stylesheet" href="resources/prism.css"/> -->
         <style type="text/css">
             *{
                 box-sizing: border-box;
@@ -25,7 +26,9 @@
                 background-color: #ccffcc;
                 position: fixed;
                 top: 0;
+                left: 0;
                 display: none;
+                z-index: 1;
             }
             .topnav a{
                 float: right;
@@ -35,6 +38,7 @@
                 text-decoration: none;
                 font-size: 20px;
                 background-color:#6666ff;
+                border-left: 2px solid #6666ff;
                 font-weight: 600;
                 min-width: 12%;
             }
@@ -45,6 +49,9 @@
             #l{
                 min-width: 0px;
                 float: left;
+            }
+            #l{
+                background-color:#6666ff;
             }
             .g54{
                 height: 48px;
@@ -68,22 +75,75 @@
                 border-left: 4px solid white;
             }
             .g55 a{
-                padding: 30px;
+                padding: 29px;
                 font-size: 30px;
-                background-color: #85adad;
+                background-color: white;
                 width: 100%;
                 float: left;
                 text-align: center;
                 text-decoration: none;
                 display: block;
-                color: white;
+                color: gray;
+                border-top:1px solid #669999;
+                border-right: 4px solid white;
+            }
+            .g55 a:last-child{
+                padding: 30px;
+                border-bottom:1px solid #669999;
             }
             .g55 a:hover{
-                border-left: 5px solid #52707a;
-                color: #52707a;
-                background-color: transparent;
-                border-bottom: 2px solid #85adad;
-                border-top: 2px solid #85adad;
+                background-color: #eff5f5;
+                border-radius: 5px;
+                border-right: 4px solid #00e6ac;
+            }
+            .flatbar{
+                box-shadow: 5px 5px 10px gray, -5px -5px 10px gray;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+            .p112{
+                padding: 5px;
+                padding-top: 10px;
+            }
+            .e7777{
+                width: 100%;
+                padding: 10px;
+                float: left;
+                text-align: center;
+                background-color: gray;
+                border-radius: 5px;
+            }
+            .e7777:hover{
+                background-color: #ff6f61;
+            }
+            .e7777 a{
+                text-decoration: none;
+                width: 100%;
+                color: white;
+                padding:5px;
+                font-size: 20px;
+            }
+            .p112 .title{
+                font-size: 35px;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                width: 100%;
+                float: left;
+                text-align: center;
+            }
+            .p112 .des{
+                padding: 5px;
+                font-size: 25px;
+                width: 100%;
+                float: left;
+                text-align: center;
+            }
+            .p113{
+                padding: 5px;
+            }
+            .p113 img{
+                width: 100%;
+                border-radius: 5px;
             }
             .b1{background-color: #00ff00;}
             .b2{background-color: #ffcc66;}
@@ -91,6 +151,7 @@
             .b4{background-color: #ff4d4d;}
             .a1100{display: none}
             @media only screen and (min-width: 768px){
+                /* M */
                 .col-1 {width: 8.33%;}
                 .col-2 {width: 16.66%;}
                 .col-3 {width: 25%;}
@@ -106,19 +167,33 @@
                 .topnav{display: block;}
                 .g54{display: block;}
                 .b{border-radius: 0px; border-right: 10px solid white;border-bottom: 10px solid white;}
-                .b1{border-top-left-radius: 30px; background-color: #00ff00;}
-                .b2{border-top-right-radius: 30px; border-right: 0px solid red; background-color: #ffcc66;}
-                .b3{border-bottom-left-radius: 30px; border-bottom: 0px solid red; background-color: #3366ff; display: inline-block;}
-                .b4{border-bottom-right-radius: 30px;border-right: 0px solid red;border-bottom: 0px solid red; background-color: #ff4d4d;}
-                .a1100{display: block;width: 100%;height:105px;background-color: transparent;}
-                
+                .b1{border-top-left-radius: 30px;}
+                .b2{border-top-right-radius: 30px; border-right: 0px solid red;}
+                .b3{border-bottom-left-radius: 30px; border-bottom: 0px solid red;}
+                .b4{border-bottom-right-radius: 30px;border-right: 0px solid red;border-bottom: 0px solid red;}
             }
+            @media only screen and (min-width: 1024px){
+                /* L */
+                .p112{padding-top: 25px;}
+                .p112 .title{padding-bottom: 25px;}
+                .p112 .des{padding-bottom: 35px;}
+            }
+            @media only screen and (min-width: 1200px){
+                /* XL */
+                .p112{padding-top: 35px;}
+                .p112 .title{padding-bottom: 45px;}
+                .p112 .des{padding-bottom: 55px;}
+            }
+            .r{float: right;}
+            .l{float: left;}
+            .c{text-align: center;}
+            .spc{width:100%;height: 50px;}
         </style>
     </head>
     <body>
         <div class="header">
             <div class="topnav">
-                <a href="#top" id="l"><img src="/images/icon.PNG" style="height:20px;width:20px;"/></a>
+                <a href="#top" id="l"><img src="images/icon.PNG" style="height:20px;width:20px;" /></a>
                 <a href="#">QnA</a>
                 <a href="#">Downloads</a>
                 <a href="#">Projects</a>
@@ -139,17 +214,91 @@
                         <a href="#" class="b b3 col-6">Game Dev</a>
                         <a href="#" class="b b4 col-6">M L</a>
                     </div>
-                    <div class="a1100"></div>
                 </div>
                 <div class="col-4 g55">
-                    <a href="#">HTML</a>
-                    <a href="#">CSS</a>
                     <a href="#">JavaScript</a>
                     <a href="#">Python</a>
+                    <a href="#">C++</a>
                     <a href="#">Kotlin</a>
-                    <a href="#">ALL</a>
+                    <a href="#">All</a>
+                </div>
+            </div>
+            <div class="spc"></div>
+            <div class="row flatbar">
+                <div class="p112 col-6 l">
+                    <div class="title">
+                        Projects
+                    </div>
+                    <div class="des">
+                        Browse our cool Hardware and Software Projects.
+                    </div>
+                    <div class="e7777"><a href="#">Browse All</a></div>
+                </div>
+                <div class="p113 col-3 r">
+                    <img src="images/sample0.png"> <!-- IMAGE RATIO 1:1 (square) -->
+                </div>
+                <div class="p113 col-3 r">
+                     <img src="images/sample1.png">
+                </div>
+            </div>
+            
+            <div class="spc"></div>
+            <div class="row flatbar">
+                <div class="p112 col-6 r">
+                    <div class="title">
+                        Projects
+                    </div>
+                    <div class="des">
+                        Browse our cool Hardware and Software Projects.
+                    </div>
+                    <div class="e7777"><a href="#">Browse All</a></div>
+                </div>
+                <div class="p113 col-3 l">
+                    <img src="images/sample2.png"> <!-- IMAGE RATIO 1:1 (square) -->
+                </div>
+                <div class="p113 col-3 l">
+                     <img src="images/sample3.png">
+                </div>
+            </div>
+            
+            <div class="spc"></div>
+            <div class="row flatbar">
+                <div class="p112 col-6 l">
+                    <div class="title">
+                        Projects
+                    </div>
+                    <div class="des">
+                        Browse our cool Hardware and Software Projects.
+                    </div>
+                    <div class="e7777"><a href="#">Browse All</a></div>
+                </div>
+                <div class="p113 col-3 r">
+                    <img src="images/sample4.png"> <!-- IMAGE RATIO 1:1 (square) -->
+                </div>
+                <div class="p113 col-3 r">
+                     <img src="images/sample0.png">
+                </div>
+            </div>
+            
+            <div class="spc"></div>
+            <div class="row flatbar">
+                <div class="p112 col-6 r">
+                    <div class="title">
+                        Projects
+                    </div>
+                    <div class="des">
+                        Browse our cool Hardware and Software Projects.
+                    </div>
+                    <div class="e7777"><a href="#">Browse All</a></div>
+                </div>
+                <div class="p113 col-3 l">
+                    <img src="images/sample1.png"> <!-- IMAGE RATIO 1:1 (square) -->
+                </div>
+                <div class="p113 col-3 l">
+                     <img src="images/sample2.png">
                 </div>
             </div>
         </div>
+        <!--<script type="text/javascript" src="resources/prism.js"></script> -->
     </body>
 </html>
