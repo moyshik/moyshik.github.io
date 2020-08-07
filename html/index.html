@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                font-family: sans-serif;
+            }
+            [class*="col-"] {
+                float: left;
+                width: 100%;
+            }
+            .row::after{
+                content: "";
+                clear: both;
+                display: table;
+            }
+            .l-h{
+                width: 100%;
+                border: 0px solid red;
+                padding: 10px;
+                float: left;
+            }
+            .l-h button{
+                font-size: 25px;
+                background-color: #ff8a80;
+                padding: 13px;
+                width:100%;
+                color: white;
+                font-weight: 600;
+                border: 2px solid #ff8a80;
+                border-radius: 5px;
+            }
+            .l-h button:hover{
+                background-color: white;
+                color: #ff8a80;
+            }
+            @media only screen and (min-width: 768px){
+                .l-h button{width:50%;font-size: 35px;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="l-h">
+                <button class="lessons" >Intro</button>
+            </div>
+            <div class="l-h">
+                <button class="lessons" >Basics</button>
+            </div>
+            <div class="l-h">
+                <button class="lessons" >Elements</button>
+            </div>
+            <div class="l-h">
+                <button class="lessons" >Attributes</button>
+            </div>
+            <div class="l-h">
+                <button class="lessons" >Hello World</button>
+            </div>
+        </div>
+        <script src="../resources/cookie.js"></script>
+        <script>
+            let lessons=document.getElementsByClassName("lessons");
+            for(let i=0;i<lessons.length;i++){
+                if(i%2==0){
+                    lessons[i].style.float="left";
+                    lessons[i].style.textAlign="left";
+                    lessons[i].style.paddingLeft="5px";
+                    if(window.innerWidth>=768){
+                        document.getElementsByClassName("l-h")[i].style.paddingLeft="1px";
+                    }
+                }else{
+                    lessons[i].style.float="right";
+                    lessons[i].style.textAlign="right";
+                    lessons[i].style.paddingRight="5px";
+                    if(window.innerWidth>=768){
+                        document.getElementsByClassName("l-h")[i].style.paddingRight="1px";
+                    }
+                }
+            }
+            for(let i=0;i<lessons.length;i++){
+                lessons[i].addEventListener("click", function(){
+                    main(i);
+                })
+            }
+            function main(p){
+                let clid;
+                if(p<=9){
+                    clid="0"+p.toString();
+                }
+                else{
+                    clid=p.toString();
+                }
+                clid = "00 00 "+clid //First two for Chapter(WebDev) second two for Galaxy(HTML) Last two for Lessons(Intro) All starts from 0 
+                setCookie("pageId",clid,100);
+                window.location.assign("../console/index.html");
+            }
+        </script>
+    </body>
+</html>
