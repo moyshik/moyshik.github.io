@@ -6,7 +6,6 @@ import Head from 'next/head'
 import { Container } from 'react-bootstrap'
 import Sidebar, { SidebarOverlay } from '@layout/AdminLayout/Sidebar/Sidebar'
 import Header from '@layout/AdminLayout/Header/Header'
-import Footer from '@layout/AdminLayout/Footer/Footer'
 
 export default function AdminLayout({ children }: PropsWithChildren) {
   const [isShowSidebar, setIsShowSidebar] = useState(false)
@@ -50,14 +49,13 @@ export default function AdminLayout({ children }: PropsWithChildren) {
 
       <Sidebar isShow={isShowSidebar} isShowMd={isShowSidebarMd} />
 
-      <div className="wrapper d-flex flex-column min-vh-100 bg-light">
+      <div className="wrapper ass d-flex flex-column min-vh-100 bg-light">
         <Header toggleSidebar={toggleIsShowSidebar} toggleSidebarMd={toggleIsShowSidebarMd} />
-        <div className="body flex-grow-1 px-sm-2 mb-4">
+        <div className="body flex-grow-1 px-sm-2">
           <Container fluid="lg">
             {children}
           </Container>
         </div>
-        <Footer />
       </div>
 
       <SidebarOverlay isShowSidebar={isShowSidebar} toggleSidebar={toggleIsShowSidebar} />

@@ -1,7 +1,7 @@
-$header-background: #4f5d73;
-$header-link-color: rgba(44, 56, 74, 0.681);
-$header-link-color-hover: rgba(44, 56, 74, 0.95);
-$header-brand-color: #4f5d73;
+$header-background: #1e2124;
+$header-link-color: #ffffff;
+$header-link-color-hover: #282B30;
+$header-brand-color: #282B30;
 
 .header {
   background: $header-background;
@@ -19,20 +19,6 @@ $header-brand-color: #4f5d73;
 
     .header-nav {
       .nav-link {
-        color: $header-link-color;
-
-        &:hover {
-          color: $header-link-color-hover;
-        }
-      }
-    }
-  }
-
-  .breadcrumb {
-    min-height: 2rem;
-
-    .breadcrumb-item {
-      a {
         color: $header-link-color;
 
         &:hover {

@@ -17,7 +17,7 @@ export default function Sidebar(props: { isShow: boolean; isShowMd: boolean }) {
     <div
       className={classNames('sidebar d-flex flex-column position-fixed h-100', {
         'sidebar-narrow': isNarrow,
-        show: isShow,
+        show: isShow, 
         'md-hide': !isShowMd,
       })}
       id="sidebar"
