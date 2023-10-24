@@ -1,7 +1,6 @@
 {
-  "name": "nextjs-dashboard",
-  "version": "0.1.0",
-  "private": true,
+  "name": "profile",
+  "version": "0.1.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

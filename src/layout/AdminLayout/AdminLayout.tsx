@@ -9,10 +9,7 @@ import Header from '@layout/AdminLayout/Header/Header'
 import Footer from '@layout/AdminLayout/Footer/Footer'
 
 export default function AdminLayout({ children }: PropsWithChildren) {
-  // Show status for xs screen
   const [isShowSidebar, setIsShowSidebar] = useState(false)
-
-  // Show status for md screen and above
   const [isShowSidebarMd, setIsShowSidebarMd] = useState(true)
 
   const toggleIsShowSidebar = () => {
@@ -25,7 +22,6 @@ export default function AdminLayout({ children }: PropsWithChildren) {
     setIsShowSidebarMd(newValue)
   }
 
-  // Clear and reset sidebar
   const resetIsShowSidebar = () => {
     setIsShowSidebar(false)
   }
@@ -36,7 +32,6 @@ export default function AdminLayout({ children }: PropsWithChildren) {
 
   const { ref } = useResizeDetector({ onResize })
 
-  // On first time load only
   useEffect(() => {
     if (localStorage.getItem('isShowSidebarMd')) {
       setIsShowSidebarMd(localStorage.getItem('isShowSidebarMd') === 'true')
