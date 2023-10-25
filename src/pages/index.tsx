@@ -46,7 +46,7 @@ const Home = () => (
     <br/>
     <div className="row row1">
       
-      <Link href="https://www.instagram.com/oii.seek/" target="_blank" className="rounded-lg bg-red-600 basis-1/5">
+      <Link href="https://www.instagram.com/oii.seek/" target="_blank" className="rounded-lg bg-red-500 basis-1/5">
       <div>
         <Card className="ann bg-transparent border-none">
           <Card.Body>
@@ -58,7 +58,7 @@ const Home = () => (
       </div>
       </Link>
 
-      <Link href="https://www.facebook.com/mahmud.oyshik/" target="_blank" className="rounded-lg bg-teal-700 basis-1/5">
+      <Link href="https://www.facebook.com/mahmud.oyshik/" target="_blank" className="rounded-lg bg-teal-500 basis-1/5">
       <div>
         <Card className="ann bg-transparent border-none">
           <Card.Body>
@@ -70,7 +70,7 @@ const Home = () => (
       </div>
       </Link>
 
-      <Link href="https://github.com/moyshik7" target="_blank" className="rounded-lg bg-orange-700 basis-1/5">
+      <Link href="https://github.com/moyshik7" target="_blank" className="rounded-lg bg-orange-500 basis-1/5">
       <div>
         <Card className="ann bg-transparent border-none">
           <Card.Body>
@@ -82,7 +82,7 @@ const Home = () => (
       </div>
       </Link>
 
-      <Link href="https://www.linkedin.com/in/moyshik" target="_blank" className="rounded-lg bg-indigo-800 basis-1/5">
+      <Link href="https://www.linkedin.com/in/moyshik" target="_blank" className="rounded-lg bg-indigo-500 basis-1/5">
       <div>
         <Card className="ann bg-transparent border-none">
           <Card.Body>
@@ -94,7 +94,7 @@ const Home = () => (
       </div>
       </Link>
 
-      <Link href="https://discord.com/users/584309117380853770" target="_blank" className="rounded-lg bg-sky-900 basis-1/5">
+      <Link href="https://discord.com/users/584309117380853770" target="_blank" className="rounded-lg bg-sky-500 basis-1/5">
       <div>
         <Card className="ann bg-transparent border-none">
           <Card.Body>
