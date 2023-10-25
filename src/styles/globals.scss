@@ -5,4 +5,8 @@ $enable-negative-margins: true;
 @import "layout/header";
 @import "layout/sidebar";
 
-@import "layout/custom"
+@import "layout/custom";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,5 @@
+{
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "diffEditor.codeLens": true,
+    "scss.lint.unknownAtRules": "ignore"
+}
