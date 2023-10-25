@@ -11,7 +11,7 @@ export default function Header(props: HeaderProps) {
   const { toggleSidebar, toggleSidebarMd } = props
 
   return (
-    <header className="header sticky-top py-2 px-sm-2">
+    <header className="header sticky-top">
       <Container fluid className="header-navbar d-flex align-items-center">
         <Button
           variant="link"
