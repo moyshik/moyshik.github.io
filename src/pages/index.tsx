@@ -124,13 +124,13 @@ const Home = () => (
             <br/>
             <br/>
             <h3 className='text-xl tracking-wide text-left font-sans font-semibold text-gray-800'>
-              Contact: <Link href="tel:+8801790137029">01790137029</Link>
+              Contact: <Link href="tel:+8801790137029" className="text-blue-900 font-extrabold">01790137029</Link>
             </h3>
             <br/>
             <br/>
             <br/>
             <h3 className='text-xl tracking-wide text-left font-sans font-semibold text-gray-800'>
-              Email: <Link href="mailto:moyshik7@gmail.com">moyshik7@gmail.com</Link>
+              Email: <Link href="mailto:moyshik7@gmail.com" className="text-blue-900 font-extrabold">moyshik7@gmail.com</Link>
             </h3>
             <br/>
             <br/>
@@ -260,7 +260,7 @@ const Home = () => (
             </p>
             <br/>
             <p className='text-lg tracking-wide text-left font-sans font-medium text-gray-500'>
-              My medical journey is not just a degree; it&apos;s a lifelong commitment to improving the quality of life for individuals and communities. With each day, I'm inspired to continue my quest to make a lasting impact through the amalgamation of medicine, technology, and creativity.
+              My medical journey is not just a degree; it&apos;s a lifelong commitment to improving the quality of life for individuals and communities. With each day, I&apos;m inspired to continue my quest to make a lasting impact through the amalgamation of medicine, technology, and creativity.
             </p>
             <br/>
             <p className='text-lg tracking-wide text-left font-sans font-medium text-gray-500'>
