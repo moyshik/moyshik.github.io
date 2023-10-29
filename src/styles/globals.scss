@@ -1,5 +1,11 @@
 $enable-negative-margins: true;
 
+* {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 @import "~bootstrap/scss/bootstrap";
 
 @import "layout/header";
