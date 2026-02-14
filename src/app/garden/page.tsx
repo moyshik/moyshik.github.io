@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Cloud, Sun, Wind, Flower, Trees } from "lucide-react";
+import { ArrowLeft, Cloud, Sun, Wind, Flower } from "lucide-react";
 
 type FlowerType = {
   id: number;
@@ -126,7 +126,7 @@ export default function Garden() {
                 className="p-3 bg-red-100/80 hover:bg-red-200 text-red-500 rounded-full shadow-sm transition-all hover:scale-110 active:scale-95"
                 title="Clear garden"
             >
-                <Trees size={20} className="rotate-180" />
+                <Flower size={20} className="rotate-180" />
             </button>
          </div>
       </div>
@@ -197,7 +197,7 @@ const FlowerIcon = ({ type }: { type: FlowerType["type"] }) => {
                  <div className="relative group">
                     <div className="w-0.5 h-16 bg-green-400/80 mx-auto rounded-full origin-bottom"></div>
                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-purple-400 drop-shadow-sm">
-                        <Trees size={28} fill="currentColor" className="text-purple-600" />
+                        <Flower size={28} fill="currentColor" className="text-purple-600" />
                     </div>
                 </div>
             );
