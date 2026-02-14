@@ -163,6 +163,7 @@ export default function Playlist() {
 		);
 	};
 
+	/*
 	const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const time = parseFloat(e.target.value);
 		if (audioRef.current) {
@@ -170,6 +171,7 @@ export default function Playlist() {
 			setCurrentTime(time);
 		}
 	};
+	*/
 
 	const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const vol = parseFloat(e.target.value);
@@ -188,12 +190,14 @@ export default function Playlist() {
 		}
 	};
 
+	/*
 	const formatTime = (time: number) => {
 		if (isNaN(time)) return "0:00";
 		const minutes = Math.floor(time / 60);
 		const seconds = Math.floor(time % 60);
 		return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 	};
+	*/
 
 	const handleProgressBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		const bar = e.currentTarget;
