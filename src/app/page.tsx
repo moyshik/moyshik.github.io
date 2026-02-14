@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {Instagram, Github, Heart, Sparkles, Cloud, Music, Coffee, Linkedin, Facebook } from "lucide-react";
+import {Instagram, Github, Heart, Sparkles, Cloud, Music, Coffee, Linkedin, Facebook, Flower } from "lucide-react";
 
 export default function Home() {
   const socialLinks = [
@@ -12,7 +12,7 @@ export default function Home() {
 
   const contentLinks = [
     { title: "My Portfolio", icon: <Sparkles size={16} className="text-yellow-500" />, href: "/portfolio" },
-    { title: "Latest Blog Post", icon: <Coffee size={16} className="text-amber-700" />, href: "#" },
+    { title: "Visit My Garden", icon: <Flower size={16} className="text-pink-500" />, href: "/garden" },
     { title: "My Playlist", icon: <Music size={16} className="text-purple-500" />, href: "#" },
   ];
 
