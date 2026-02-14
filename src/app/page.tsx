@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Instagram, Github, Mail, Heart, Sparkles, Cloud, Music, Coffee } from "lucide-react";
+import {Instagram, Github, Heart, Sparkles, Cloud, Music, Coffee, Linkedin, Facebook } from "lucide-react";
 
 export default function Home() {
   const socialLinks = [
-    { name: "Instagram", href: "#", icon: <Instagram size={20} />, color: "hover:bg-pink-100 hover:text-pink-600" },
-    { name: "Twitter", href: "#", icon: <Twitter size={20} />, color: "hover:bg-blue-100 hover:text-blue-500" },
-    { name: "GitHub", href: "#", icon: <Github size={20} />, color: "hover:bg-purple-100 hover:text-purple-600" },
-    { name: "Email", href: "mailto:hello@example.com", icon: <Mail size={20} />, color: "hover:bg-yellow-100 hover:text-yellow-600" },
+    { name: "Instagram", href: "https://www.instagram.com/oii.seek", icon: <Instagram size={20} />, color: "hover:bg-pink-100 hover:text-pink-600" },
+    { name: "Linkedin", href: "https://www.linkedin.com/in/moyshik", icon: <Linkedin size={20} />, color: "hover:bg-blue-100 hover:text-blue-500" },
+    { name: "GitHub", href: "https://github.com/moyshik7", icon: <Github size={20} />, color: "hover:bg-purple-100 hover:text-purple-600" },
+    { name: "Facebook", href: "https://www.facebook.com/oii.seek", icon: <Facebook size={20} />, color: "hover:bg-yellow-100 hover:text-yellow-600" },
   ];
 
   const contentLinks = [
@@ -41,7 +41,7 @@ export default function Home() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
                     <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-sm transition-transform duration-500 group-hover:scale-105 bg-white flex items-center justify-center">
                          <Image 
-                            src="/avatar.png" 
+                            src="/profile.jpg" 
                             alt="Profile Avatar" 
                             width={128} 
                             height={128} 
@@ -56,10 +56,10 @@ export default function Home() {
                 {/* Text Content */}
                 <div className="space-y-2">
                     <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 font-sans tracking-tight">
-                        Generic User
+                        Oyshik
                     </h1>
                     <p className="text-gray-500 font-medium text-sm md:text-base max-w-[280px] mx-auto leading-relaxed">
-                        Digital Artist &amp; Developer ✨
+                        Med Student &amp; Developer
                         <br/>
                         Creating calm in the chaos ☁️
                     </p>
