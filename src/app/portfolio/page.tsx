@@ -9,6 +9,7 @@ export default function Portfolio() {
       tags: ["React Native", "Expo"],
       icon: <Layout size={24} className="text-red-500" />,
       color: "bg-red-100/50",
+      link: "https://github.com/moyshik7/redflag",
     },
     {
       title: "MindSpace Bangladesh",
@@ -16,6 +17,7 @@ export default function Portfolio() {
       tags: ["Next.js", "Tailwind", "TypeScript"],
       icon: <Heart size={24} className="text-teal-500" />,
       color: "bg-teal-100/50",
+      link: "https://www.mindspacebd.com/",
     },
     {
       title: "Wikipedia Scraper",
@@ -23,6 +25,7 @@ export default function Portfolio() {
       tags: ["Python", "Node.js", "TypeScript"],
       icon: <Code size={24} className="text-gray-600" />,
       color: "bg-gray-200/50",
+      link: "https://github.com/moyshik7/article-scraper",
     },
     {
       title: "E-commerce Web Demo",
@@ -30,13 +33,15 @@ export default function Portfolio() {
       tags: ["TypeScript", "Next.js", "MongoDB"],
       icon: <ImageIcon size={24} className="text-orange-500" />,
       color: "bg-orange-100/50",
+      link: "https://github.com/moyshik7/ecommerce-web-demo",
     },
     {
-      title: "Notes Web",
+      title: "Note Marketplace",
       description: "A modern marketplace platform for students to buy and sell study notes.",
-      tags: ["Next.js 16", "TypeScript", "MongoDB"],
+      tags: ["Next.js", "TypeScript", "MongoDB"],
       icon: <Sparkles size={24} className="text-purple-500" />,
       color: "bg-purple-100/50",
+      link: "https://github.com/moyshik7/notes-web",
     },
   ];
 
@@ -82,7 +87,12 @@ export default function Portfolio() {
                     <div className={`p-3 rounded-2xl ${project.color} group-hover:scale-110 transition-transform duration-300`}>
                         {project.icon}
                     </div>
-                    <Link href="#" className="p-2 rounded-full hover:bg-white/50 text-gray-400 hover:text-pink-500 transition-colors">
+                    <Link 
+                        href={project.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full hover:bg-white/50 text-gray-400 hover:text-pink-500 transition-colors"
+                    >
                         <ExternalLink size={20} />
                     </Link>
                 </div>
