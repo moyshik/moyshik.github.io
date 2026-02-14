@@ -105,6 +105,38 @@ const tracks: Track[] = [
 		durationString: "3:11",
 		color: "bg-cyan-100",
 	},
+	{
+		id: 11,
+		title: "Bella Ciao",
+		artist: "Manu Pilas",
+		src: "/audio/Bella Ciao - Manu Pilas.mp3",
+		durationString: "3:30",
+		color: "bg-rose-100",
+	},
+	{
+		id: 12,
+		title: "Diddy Heil Epstein",
+		artist: "Vexy",
+		src: "/audio/Diddy Heil Epstein -  Vexy.mp3",
+		durationString: "4:00",
+		color: "bg-lime-100",
+	},
+	{
+		id: 13,
+		title: "Heil Hitler",
+		artist: "Kanye West",
+		src: "/audio/HH -Kanye West.mp3",
+		durationString: "3:45",
+		color: "bg-amber-100",
+	},
+	{
+		id: 14,
+		title: "Kim Jung Goon",
+		artist: "Hyperbaiter",
+		src: "/audio/Kim Jung Goon - Hyperbaiter.mp3",
+		durationString: "3:50",
+		color: "bg-fuchsia-100",
+	},
 ];
 
 export default function Playlist() {
