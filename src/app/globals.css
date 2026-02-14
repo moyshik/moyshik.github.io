@@ -1,51 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdf2f8; /* Pink-50 as base */
-  --foreground: #831843; /* Pink-900 for test */
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(255, 255, 255, 0.5);
-  --accent-pink: #fbcfe8;
-  --accent-blue: #bae6fd;
-  --accent-purple: #e9d5ff;
+	--background: #fdf2f8; /* Pink-50 as base */
+	--foreground: #831843; /* Pink-900 for test */
+	--card-bg: rgba(255, 255, 255, 0.7);
+	--card-border: rgba(255, 255, 255, 0.5);
+	--accent-pink: #fbcfe8;
+	--accent-blue: #bae6fd;
+	--accent-purple: #e9d5ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card-bg);
-  --color-card-border: var(--card-border);
-  --color-pastel-pink: var(--accent-pink);
-  --color-pastel-blue: var(--accent-blue);
-  --color-pastel-purple: var(--accent-purple);
-  
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card-bg);
+	--color-card-border: var(--card-border);
+	--color-pastel-pink: var(--accent-pink);
+	--color-pastel-blue: var(--accent-blue);
+	--color-pastel-purple: var(--accent-purple);
+
+	--font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #fdf2f8 0%, #fff1f2 100%);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  min-height: 100vh;
-  overflow-x: hidden;
+	background: linear-gradient(135deg, #fdf2f8 0%, #fff1f2 100%);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 /* Glassmorphism utility */
 .glass-panel {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+	background: var(--card-bg);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--card-border);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 /* Cute animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+	animation: float 6s ease-in-out infinite;
 }
