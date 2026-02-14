@@ -13,7 +13,7 @@ export default function Home() {
   const contentLinks = [
     { title: "My Portfolio", icon: <Sparkles size={16} className="text-yellow-500" />, href: "/portfolio" },
     { title: "Visit My Garden", icon: <Flower size={16} className="text-pink-500" />, href: "/garden" },
-    { title: "My Playlist", icon: <Music size={16} className="text-purple-500" />, href: "#" },
+    { title: "My Playlist", icon: <Music size={16} className="text-purple-500" />, href: "/playlist" },
   ];
 
   return (
