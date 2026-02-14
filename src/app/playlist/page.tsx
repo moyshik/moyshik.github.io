@@ -195,6 +195,18 @@ export default function Playlist() {
 		return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 	};
 
+	const handleProgressBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		const bar = e.currentTarget;
+		const rect = bar.getBoundingClientRect();
+		const percent = (e.clientX - rect.left) / rect.width;
+		const newTime = percent * duration;
+		
+		if (audioRef.current && !isNaN(newTime)) {
+			audioRef.current.currentTime = newTime;
+			setCurrentTime(newTime);
+		}
+	};
+
 	return (
 		<main className="relative flex min-h-screen flex-col bg-linear-to-br from-pink-50 via-purple-50 to-blue-50 selection:bg-pink-100 selection:text-pink-600 font-sans">
 			{/* Header */}
@@ -290,7 +302,18 @@ export default function Playlist() {
 			</div>
 
 			{/* Bottom Player Bar */}
-			<div className="fixed bottom-0 left-0 right-0 h-24 bg-white/80 backdrop-blur-xl border-t border-white/50 shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.05)] px-6 flex items-center justify-between z-50">
+			<div className="fixed bottom-0 left-0 right-0 h-20 md:h-24 bg-white/80 backdrop-blur-xl border-t border-white/50 shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.05)] px-3 md:px-6 flex items-center justify-between gap-2 md:gap-4 z-50">
+				{/* Progress Bar */}
+				<div 
+					className="absolute top-0 left-0 right-0 h-1 bg-gray-200 cursor-pointer hover:h-1.5 transition-all"
+					onClick={handleProgressBarClick}
+				>
+					<div
+						className="h-full bg-linear-to-r from-green-400 to-green-500 transition-all duration-100 pointer-events-none"
+						style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+					></div>
+				</div>
+
 				<audio
 					ref={audioRef}
 					src={currentTrack.src}
@@ -299,33 +322,35 @@ export default function Playlist() {
 				/>
 
 				{/* Current Track Info */}
-				<div className="flex items-center gap-4 w-1/3 min-w-45">
+				<div className="flex items-center gap-2 md:gap-4 shrink min-w-0 flex-1 md:flex-none md:w-1/3">
 					<div
-						className={`w-14 h-14 rounded-xl ${currentTrack.color} flex items-center justify-center shadow-sm animate-pulse`}
+						className={`w-10 h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl ${currentTrack.color} flex items-center justify-center shadow-sm animate-pulse shrink-0`}
 					>
-						<Music size={24} className="text-gray-600" />
+						<Music size={18} className="md:hidden text-gray-600" />
+						<Music size={24} className="hidden md:block text-gray-600" />
 					</div>
-					<div className="overflow-hidden">
-						<h3 className="font-bold text-gray-800 truncate leading-tight">
+					<div className="overflow-hidden min-w-0">
+						<h3 className="font-bold text-sm md:text-base text-gray-800 truncate leading-tight">
 							{currentTrack.title}
 						</h3>
 						<p className="text-xs text-gray-500 truncate">
 							{currentTrack.artist}
 						</p>
 					</div>
-					<button className="text-pink-400 hover:text-pink-600 transition-colors ml-2">
+					<button className="text-pink-400 hover:text-pink-600 transition-colors ml-2 hidden md:block shrink-0">
 						<Heart size={18} />
 					</button>
 				</div>
 
 				{/* Player Controls */}
-				<div className="flex flex-col items-center gap-1 w-1/3 max-w-md">
-					<div className="flex items-center gap-6">
+				<div className="flex flex-col items-center gap-1 shrink-0 w-auto md:w-1/3 max-w-md">
+					<div className="flex items-center gap-3 md:gap-6">
 						<button
 							onClick={handlePrev}
 							className="text-gray-400 hover:text-gray-800 transition-transform active:scale-95"
 						>
-							<SkipBack size={24} fill="currentColor" />
+							<SkipBack size={20} className="md:hidden" fill="currentColor" />
+							<SkipBack size={24} className="hidden md:block" fill="currentColor" />
 						</button>
 						<button
 							onClick={handlePlayPause}
@@ -345,11 +370,12 @@ export default function Playlist() {
 							onClick={handleNext}
 							className="text-gray-400 hover:text-gray-800 transition-transform active:scale-95"
 						>
-							<SkipForward size={24} fill="currentColor" />
+							<SkipForward size={20} className="md:hidden" fill="currentColor" />
+							<SkipForward size={24} className="hidden md:block" fill="currentColor" />
 						</button>
 					</div>
-
-					<div className="flex items-center gap-2 w-full text-xs font-mono text-gray-400">
+					{/*
+					<div className="hidden md:flex items-center gap-2 w-full text-xs font-mono text-gray-400">
 						<span>{formatTime(currentTime)}</span>
 						<input
 							type="range"
@@ -361,10 +387,11 @@ export default function Playlist() {
 						/>
 						<span>{formatTime(duration)}</span>
 					</div>
+					*/}
 				</div>
 
-				{/* Volume Control */}
-				<div className="flex items-center justify-end gap-2 w-1/3 min-w-37.5">
+				{/* Volume Control - Hidden on mobile */}
+				<div className="hidden md:flex items-center justify-end gap-2 w-1/3">
 					<button
 						onClick={toggleMute}
 						className="text-gray-400 hover:text-gray-600"

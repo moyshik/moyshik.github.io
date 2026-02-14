@@ -11,7 +11,6 @@ const nunito = Nunito({
 export const metadata: Metadata = {
 	title: "Welcome to My Profile ✨",
 	description: "A cute and creative user profile page showcasing my work, skills, and personality",
-	themeColor: "#fce7f3",
 	openGraph: {
 		title: "Welcome to My Profile ✨",
 		description: "A cute and creative user profile page showcasing my work, skills, and personality",
@@ -35,6 +34,10 @@ export const metadata: Metadata = {
 		],
 		description: "A cute and creative user profile page showcasing my work, skills, and personality",
 	},
+};
+
+export const viewport = {
+	themeColor: "#fce7f3",
 };
 
 export default function RootLayout({
